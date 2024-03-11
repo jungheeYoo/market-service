@@ -21,7 +21,7 @@
         },
         {
           "id": 3,
-          "imgSrc": "/js_basic_market/public/assets/단호박.jpg",
+          "imgSrc": "./public/assets/단호박.jpg",
           "name": "단호박 1통",
           "discountPercent": 12,
           "price": 3520,
@@ -29,7 +29,7 @@
         },
         {
           "id": 4,
-          "imgSrc": "/js_basic_market/public/assets/삼겹살.jpg",
+          "imgSrc": "./public/assets/삼겹살.jpg",
           "name": "구이용 삼겹살 600g",
           "discountPercent": 5,
           "price": 14820,
@@ -37,7 +37,7 @@
         },
         {
           "id": 5,
-          "imgSrc": "/js_basic_market/public/assets/머핀.jpg",
+          "imgSrc": "./public/assets/머핀.jpg",
           "name": "[홍대 W마켓] 컵케익 (2입)",
           "discountPercent": 20,
           "price": 4800,
