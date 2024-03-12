@@ -1,6 +1,6 @@
-import { getProductList } from './module/productList.js';
+import { getProductSection } from './module/productSection.js';
 
-const productList = getProductList([
+const productSection = getProductSection('인기 상품', [
   {
     id: 4,
     imgSrc: './public/assets/삼겹살.jpg',
@@ -28,4 +28,4 @@ const productList = getProductList([
 ]);
 
 // index.html 보면 body 태그의 마지막 요소로 들어가 있다
-document.body.appendChild(productList);
+document.body.appendChild(productSection);
