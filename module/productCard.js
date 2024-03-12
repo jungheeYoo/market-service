@@ -1,13 +1,9 @@
 import { appendChildrenList, makeDOMwithProperties } from '../utils/dom.js';
+import { getCartToggleButton } from './cartToggleButton.js';
 
 // getProductCard 는 호출시에 ProductCard라는 DOM을 생성해서 내보내주는 함수
-export const getProductCard = ({
-  imgSrc,
-  name,
-  discountPercent,
-  price,
-  originalPrice,
-}) => {
+export const getProductCard = (productInfo) => {
+  const { imgSrc, name, discountPercent, price, originalPrice } = productInfo;
   // DOM 생성
   // --- product-card ---
   const productCard = makeDOMwithProperties('div', {
@@ -23,15 +19,9 @@ export const getProductCard = ({
     src: imgSrc,
     alt: name,
   });
-  const cartToggleBtn = makeDOMwithProperties('button', {
-    className: 'cart-toggle-btn',
-    type: 'button',
-  });
-  const cartImage = makeDOMwithProperties('img', {
-    className: 'cart-image',
-    src: 'public/assets/cart.png',
-  });
-  cartToggleBtn.appendChild(cartImage);
+
+  const cartToggleBtn = getCartToggleButton(productInfo); // cartToggleButton.js
+
   appendChildrenList(productImageCon, [productImage, cartToggleBtn]);
   // --- product-image-con ---
 
