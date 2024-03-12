@@ -4,7 +4,7 @@ import { appendChildrenList, makeDOMwithProperties } from '../utils/dom.js';
 export const getProductCard = ({
   imgSrc,
   name,
-  discountPersent,
+  discountPercent,
   price,
   originalPrice,
 }) => {
@@ -49,7 +49,7 @@ export const getProductCard = ({
   });
   const productDiscountPercent = makeDOMwithProperties('div', {
     className: 'product-discount-percent',
-    innerHTML: `${discountPersent}%`,
+    innerHTML: `${discountPercent}%`,
   });
   const productPrice = makeDOMwithProperties('div', {
     className: 'product-price',
