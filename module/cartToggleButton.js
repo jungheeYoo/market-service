@@ -31,8 +31,15 @@ const addCartInfo = (productInfo) => {
   );
 };
 
-const removeCartInfo = () => {
-  console.log('removeCartInfo');
+const removeCartInfo = ({ id }) => {
+  // const { id } = productInfo
+  // 장바구니에서 해당 물품의 정보를 삭제
+  const originalCartInfo =
+    JSON.parse(localStorage.getItem(CART_COOKIE_KEY)) || [];
+  const newCartInfo = originalCartInfo.filter((cartInfo) => cartInfo.id !== id);
+  // Array.filter
+
+  localStorage.setItem(CART_COOKIE_KEY, JSON.stringify(newCartInfo));
 };
 
 export const getCartToggleButton = (productInfo) => {
@@ -43,7 +50,7 @@ export const getCartToggleButton = (productInfo) => {
     onclick: () => {
       if (inCart) {
         // 이미 장바구니에 들어가 있으면
-        removeCartInfo();
+        removeCartInfo(productInfo);
         cartImage.src = 'public/assets/cart.png';
       } else {
         // 장바구니에 x
