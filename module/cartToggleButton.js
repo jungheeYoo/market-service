@@ -49,13 +49,20 @@ export const getCartToggleButton = (productInfo) => {
     type: 'button',
     onclick: () => {
       if (inCart) {
-        // 이미 장바구니에 들어가 있으면
+        // 이미 장바구니에 들어가 있으면 -> 장바구니에 삭제
+        if (!confirm(`[${productInfo.name}]을 장바구니에서 삭제할까요?`))
+          return; // early-return
         removeCartInfo(productInfo);
         cartImage.src = 'public/assets/cart.png';
       } else {
-        // 장바구니에 x
+        // 장바구니에 x -> 장바구니에 넣기
         addCartInfo(productInfo);
         cartImage.src = 'public/assets/cartDisabled.png';
+        // const result = ;
+        if (confirm('장바구니에 담았습니다. 장바구니 페이지로 이동할까요?')) {
+          location.href =
+            '/2.zero-base/0-1.%20클론코딩연습/js-practice/market-service/cart.html';
+        }
       }
       inCart = !inCart;
     },
