@@ -1,8 +1,17 @@
 import { makeDOMwithProperties } from '../utils/dom.js';
 import { CART_COOKIE_KEY } from '../constants/cart.js';
 
+const isInCart = ({ id }) => {
+  // 현재 해당 상품이 장바구니 안에 있는지를 판단하여 결과를 반환
+  const originalCartInfo =
+    JSON.parse(localStorage.getItem(CART_COOKIE_KEY)) || [];
+  // Array.find
+  return !!originalCartInfo.find((cartInfo) => cartInfo.id === id);
+};
+
 // 장바구니에 넣는 버튼
 const addCartInfo = (productInfo) => {
+  console.log('addCartInfo');
   // 장바구니에 해당 물품의 정보를 저장
   const originalCartInfo =
     JSON.parse(localStorage.getItem(CART_COOKIE_KEY)) || [];
@@ -22,17 +31,31 @@ const addCartInfo = (productInfo) => {
   );
 };
 
+const removeCartInfo = () => {
+  console.log('removeCartInfo');
+};
+
 export const getCartToggleButton = (productInfo) => {
+  let inCart = isInCart(productInfo);
   const cartToggleBtn = makeDOMwithProperties('button', {
     className: 'cart-toggle-btn',
     type: 'button',
     onclick: () => {
-      addCartInfo(productInfo);
+      if (inCart) {
+        // 이미 장바구니에 들어가 있으면
+        removeCartInfo();
+        cartImage.src = 'public/assets/cart.png';
+      } else {
+        // 장바구니에 x
+        addCartInfo(productInfo);
+        cartImage.src = 'public/assets/cartDisabled.png';
+      }
+      inCart = !inCart;
     },
   });
   const cartImage = makeDOMwithProperties('img', {
     className: 'cart-image',
-    src: 'public/assets/cart.png',
+    src: inCart ? 'public/assets/cartDisabled.png' : 'public/assets/cart.png',
   });
   cartToggleBtn.appendChild(cartImage);
 
