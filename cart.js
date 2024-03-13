@@ -1,5 +1,6 @@
 import { CART_COOKIE_KEY } from './constants/cart.js';
 import { getCartInfo } from './module/cartToggleButton.js';
+import { setPayInfo } from './module/payModule.js';
 import { getProductList } from './module/productList.js';
 import { makeDOMwithProperties } from './utils/dom.js';
 // 부모는 section tag
@@ -65,3 +66,5 @@ cartAllDeleteButtonDOM.onclick = () => {
   // localStorage.clear(); // localStorage의 모든 키-값 쌍이 삭제
   location.reload(); // 새로고침
 };
+
+setPayInfo();
