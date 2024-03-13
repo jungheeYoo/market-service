@@ -1,3 +1,4 @@
+import { CART_COOKIE_KEY } from './constants/cart.js';
 import { getCartInfo } from './module/cartToggleButton.js';
 import { getProductList } from './module/productList.js';
 import { makeDOMwithProperties } from './utils/dom.js';
@@ -55,3 +56,12 @@ if (cartInfo.length < 1) {
   // A.insertBefore(B, C);
   // B가 A아래의 C 앞에 삽입되는 메서드
 }
+
+/* ----------------------------------- */
+const cartAllDeleteButtonDOM = document.getElementById('remove-all-button');
+cartAllDeleteButtonDOM.onclick = () => {
+  // localStorage에 있는 장바구니 물품 목록 정보가 전부 삭제
+  localStorage.removeItem(CART_COOKIE_KEY); // cartInfo라는 키를 가진 키-값 쌍이 삭제
+  // localStorage.clear(); // localStorage의 모든 키-값 쌍이 삭제
+  location.reload(); // 새로고침
+};

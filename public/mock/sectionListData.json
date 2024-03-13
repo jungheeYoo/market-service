@@ -5,7 +5,7 @@
       "productList": [
         {
           "id": 1,
-          "imgSrc": "/js_basic_market/public/assets/파프리카.jpg",
+          "imgSrc": "./public/assets/파프리카.jpg",
           "name": "파프리카 2입",
           "discountPercent": 20,
           "price": 2000,
@@ -13,7 +13,7 @@
         },
         {
           "id": 2,
-          "imgSrc": "/js_basic_market/public/assets/당근.jpg",
+          "imgSrc": "./public/assets/당근.jpg",
           "name": "친환경 당근 400g",
           "discountPercent": 33,
           "price": 2000,
@@ -26,7 +26,12 @@
           "discountPercent": 12,
           "price": 3520,
           "originalPrice": 4000
-        },
+        }
+      ]
+    },
+    {
+      "sectionTitle": "새로 들어온 상품",
+      "productList": [
         {
           "id": 4,
           "imgSrc": "./public/assets/삼겹살.jpg",
@@ -45,15 +50,20 @@
         },
         {
           "id": 6,
-          "imgSrc": "/js_basic_market/public/assets/원두.jpg",
+          "imgSrc": "./public/assets/원두.jpg",
           "name": "[카페 W] 디카페인 원두 1kg",
           "discountPercent": 15,
           "price": 7140,
           "originalPrice": 8400
-        },
+        }
+      ]
+    },
+    {
+      "sectionTitle": "재구매율이 높은 상품",
+      "productList": [
         {
           "id": 7,
-          "imgSrc": "/js_basic_market/public/assets/식빵.jpg",
+          "imgSrc": "./public/assets/식빵.jpg",
           "name": "우유 토스트 식빵",
           "discountPercent": 10,
           "price": 3000,
@@ -61,7 +71,7 @@
         },
         {
           "id": 8,
-          "imgSrc": "/js_basic_market/public/assets/파스타.jpg",
+          "imgSrc": "./public/assets/파스타.jpg",
           "name": "롱 파스타 면 2종",
           "discountPercent": 5,
           "price": 7600,
@@ -69,7 +79,7 @@
         },
         {
           "id": 9,
-          "imgSrc": "/js_basic_market/public/assets/바나나.jpg",
+          "imgSrc": "./public/assets/바나나.jpg",
           "name": "바나나 1kg (필리핀 산)",
           "discountPercent": 10,
           "price": 2700,
@@ -77,7 +87,7 @@
         },
         {
           "id": 10,
-          "imgSrc": "/js_basic_market/public/assets/키위.jpg",
+          "imgSrc": "./public/assets/키위.jpg",
           "name": "뉴질랜드 골드 키위 4입 1팩",
           "discountPercent": 5,
           "price": 10310,
@@ -85,7 +95,7 @@
         },
         {
           "id": 11,
-          "imgSrc": "/js_basic_market/public/assets/아보카도.jpg",
+          "imgSrc": "./public/assets/아보카도.jpg",
           "name": "아보카도 200g 1개",
           "discountPercent": 5,
           "price": 2700,
