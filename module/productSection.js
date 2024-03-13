@@ -30,6 +30,11 @@ import { getProductList } from './productList.js';
   */
 }
 
+// 1. sectionName, productInfoList 이 두개를 매개변수로 받고 dom 생성
+// 2. section dom이 필요하므로 productListSection변수를 만들고 해당 프로퍼티를 포함해서
+// 만드는 유틸 함수를 이용해서 만듦
+
+// 6. export 내보내기
 export const getProductSection = (sectionName, productInfoList) => {
   const productListSection = makeDOMwithProperties('div', {
     className: 'product-list-section',
@@ -44,10 +49,16 @@ export const getProductSection = (sectionName, productInfoList) => {
     innerHTML: sectionName,
   });
 
+  // 3. section-title 내부에 titleHighlight, title가 append 되어있으므로
+  // appendChildrenList 모듈을 이용해서 삽입
   appendChildrenList(sectionTitle, [titleHighlight, title]);
 
+  // 4. productListContainer는 getProductList() 함수를 이용해서 매개변수로 받아온
+  // productInfoList만 넘겨주면 된다
   const productListContainer = getProductList(productInfoList);
 
+  // 5. 그래서 생성 된  sectionTitle, productListContainer 이 두가지를
+  // productListSection dom에 append 해줌
   appendChildrenList(productListSection, [sectionTitle, productListContainer]);
 
   return productListSection;
