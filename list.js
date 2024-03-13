@@ -2,7 +2,7 @@
 
 import { getProductList } from './module/productList.js';
 import { fetchSectionListData } from './module/fetch.js';
-import { setButtonEvent, setFilterEvent } from './module/productFilter.js';
+import { setButtonEvent } from './module/productFilter.js';
 
 // fetch문 모듈로 만들기
 // 만들고 가져오기
@@ -23,5 +23,4 @@ const section = document.getElementsByTagName('section')[0];
 const productListDOM = getProductList(productList);
 section.appendChild(productListDOM);
 
-setFilterEvent();
 setButtonEvent(productList);
