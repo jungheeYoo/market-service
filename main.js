@@ -1,5 +1,6 @@
 // 2. 모듈 productSection import 해옴
 import { getProductSection } from './module/productSection.js';
+import { fetchSectionListData } from './module/fetch.js';
 
 const body = document.getElementsByTagName('body')[0];
 
@@ -11,8 +12,9 @@ const body = document.getElementsByTagName('body')[0];
 // promise에서 data를 추출해서 보여줄 수 있게 await문법을 사용하고 data를 콘솔로 찍어봄
 // 6-5 try절에 실행하고 싶은 코드를 넣고
 try {
-  const response = await fetch('./public/mock/sectionListData.json');
-  const data = await response.json();
+  // fetch 모듈 함수 만듦
+  // const response = await fetch('./public/mock/sectionListData.json');
+  // const data = await response.json();
   // console.log(data);
   /* 
 response는 이렇게
@@ -25,7 +27,9 @@ response는 이렇게
   // 6-3 이렇게 브라우저에서 sectionInfoList를 data 변수로 받는 것을 확인했고 이 데이터 변수 내부에
   // sectionInforList의 값을 데이터 안에 있는 sectionInforList 필드로 받는다
   // 6-4 sectionInforList를 사용해서 document에 붙이기 전에 fetch함수에 에러가 날 수 있으므로 에러 핸들링 함
-  const sectionInfoList = data.sectionInfoList;
+  // fetch 모듈 함수 만듦
+  // const sectionInfoList = data.sectionInfoList;
+  const sectionInfoList = await fetchSectionListData();
   // 6-6 만약 에러가 난다면 아래처럼 대응해주세요
 
   // 6-7 sectionInfoList가 구현된 형태를 살펴보면 섹션이 배열의 형태로 들어가 있다
